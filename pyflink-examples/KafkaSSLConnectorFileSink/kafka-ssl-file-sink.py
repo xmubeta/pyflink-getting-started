@@ -89,6 +89,7 @@ def create_source_table(table_name,bootstrap_servers, input_topic, group_id,
                 'properties.config.providers.s3import.param.region' = '{4}',
                 'properties.config.providers.secretsmanager.param.region' = '{4}',
                 'properties.security.protocol' = 'SSL',
+                'properties.ssl.endpoint.identification.algorithm' = '',
                 'properties.ssl.truststore.location' = '${{s3import:{4}:{5}}}',
                 'properties.ssl.truststore.password' = '${{secretsmanager:{6}}}',
                 'properties.ssl.keystore.location' = '${{s3import:{4}:{7}}}',
@@ -109,7 +110,6 @@ def create_sink_table(table_name, bucket_name):
                   'connector'='filesystem',
                   'path'='s3a://{1}/{0}/',
                   'format'='json',
-                  'sink.parallelism' = '2',
                   'sink.partition-commit.policy.kind'='success-file',
                   'sink.partition-commit.delay' = '1 min'
                   

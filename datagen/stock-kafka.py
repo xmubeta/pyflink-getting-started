@@ -29,7 +29,7 @@ def generate(stream_name, producer):
 
 
 if __name__ == '__main__':
-    producer = KafkaProducer(bootstrap_servers='ip-172-31-189-232:9095',
+    producer = KafkaProducer(bootstrap_servers='<kaka server>',
                              security_protocol='SSL',
                              ssl_check_hostname=True,
                              ssl_cafile='/home/ec2-user/Work/msk/kafka/keystore/client/CAR',
