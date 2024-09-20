@@ -10,6 +10,7 @@ Required libraries to add
 To adapt to running on Amazon Managed Apache Flink, generate a UBER jar (lib/FatJarMaker-1.0-SNAPSHOT-combined.jar) with these three jars.
 
 To connect to Kafka with SSL keystore and truststore, use Apache Kafka Config Providers (https://github.com/aws-samples/msk-config-providers )
+Set up Secrets Manage to store password of keystore and truststore, then put keystore and truststore files on S3.
 
 This example demonstrates 
 * How to consume & produce records using pyflink SQL connector for kafka with SSL certificates. 

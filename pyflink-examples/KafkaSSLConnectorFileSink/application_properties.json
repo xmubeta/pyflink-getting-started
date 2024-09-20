@@ -14,9 +14,9 @@
       "aws.region": "<region name>",
       "group.id": "test_group",
       "scan.startup.mode": "latest-offset",
-      "truststore.location": "<s3 path>/server.truststore.jks",
+      "truststore.location": "<s3 bucket>/<s3 prefix>/server.truststore.jks",
       "truststore.passwd": "<secrets manager name>:ssl_trust_pass",
-      "keystore.location":  "<s3 path>/flink/keystore/server.keystore.jks",
+      "keystore.location":  "<s3 bucket>/<s3 prefix>/server.keystore.jks",
       "keystore.passwd":  "<secrets manager name>:ssl_key_pass"
     }
   },
