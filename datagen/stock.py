@@ -2,9 +2,10 @@ import datetime
 import json
 import random
 import boto3
+import time
 
-STREAM_NAME = "input-stream"
-STREAM_REGION = "us-east-1"
+STREAM_NAME = "kinesis01"
+STREAM_REGION = "cn-north-1"
 
 
 def get_data():
@@ -21,8 +22,8 @@ def generate(stream_name, kinesis_client):
         kinesis_client.put_record(
             StreamName=stream_name,
             Data=json.dumps(data),
-            PartitionKey="partitionkey")
-
+            PartitionKey=data['event_time'][-2:])
+        time.sleep(1)
 
 if __name__ == '__main__':
     generate(STREAM_NAME, boto3.client('kinesis', region_name=STREAM_REGION))

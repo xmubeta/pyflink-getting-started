@@ -1,0 +1,29 @@
+[
+  {
+  "PropertyGroupId": "kinesis.analytics.flink.run.options",
+  "PropertyMap": {
+    "python": "KafkaSSLConnectorFileSink/kafka-ssl-file-sink.py",
+    "jarfile": "KafkaSSLConnectorFileSink/lib/FatJarMaker-1.0-SNAPSHOT-combined.jar"
+   }
+  },
+  {
+    "PropertyGroupId": "consumer.config.0",
+    "PropertyMap": {
+      "input.topic": "event-consumer-topic",
+      "bootstrap.servers": "<Kafka server>",
+      "aws.region": "<region name>",
+      "group.id": "test_group",
+      "scan.startup.mode": "latest-offset",
+      "truststore.location": "<s3 path>/server.truststore.jks",
+      "truststore.passwd": "<secrets manager name>:ssl_trust_pass",
+      "keystore.location":  "<s3 path>/flink/keystore/server.keystore.jks",
+      "keystore.passwd":  "<secrets manager name>:ssl_key_pass"
+    }
+  },
+  {
+    "PropertyGroupId": "producer.config.0",
+    "PropertyMap": {
+      "output.bucket.name": "aaaaa"
+    }
+  }
+]
