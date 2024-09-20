@@ -23,7 +23,7 @@
   {
     "PropertyGroupId": "producer.config.0",
     "PropertyMap": {
-      "output.bucket.name": "aaaaa"
+      "output.bucket.name": "<s3 bucket>"
     }
   }
 ]
